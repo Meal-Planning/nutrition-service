@@ -1,0 +1,886 @@
+{
+	"ingredients": [{
+		"ingredientId": "chicken_breast",
+		"name": "Chicken Breast",
+		"cost": {
+			"price": 3.18,
+			"unit": "pound"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 2,
+				"teaspoon": null,
+				"whole": 302
+			},
+			"fat": {
+				"gram": 0.033,
+				"teaspoon": null,
+				"whole": 7
+			},
+			"carbs": {
+				"gram": 0,
+				"teaspoon": null,
+				"whole": 0
+			},
+			"protein": {
+				"gram": 0.3,
+				"teaspoon": null,
+				"whole": 58
+			}
+		},
+		"allergies": [],
+		"tags": ["paleo",
+		"low-carb",
+		"no-carb",
+		"poultry",
+		"chicken"]
+	},
+	{
+		"ingredientId": "ground_turkey",
+		"name": "Ground Turkey",
+		"cost": {
+			"price": 3.99,
+			"unit": "pound"
+		},
+		"commonalityFactor": 9,
+		"measurements": {
+			"calories": {
+				"gram": 1.5179,
+				"teaspoon": null,
+				"whole": 680
+			},
+			"protein": {
+				"gram": 0.1875,
+				"teaspoon": null,
+				"whole": 84
+			},
+			"carbs": {
+				"gram": 0,
+				"teaspoon": null,
+				"whole": 0
+			},
+			"fat": {
+				"gram": 0.2857,
+				"teaspoon": null,
+				"whole": 32
+			}
+		},
+		"allergies": [],
+		"tags": ["paleo",
+		"low-carb",
+		"no-carb"]
+	},
+	{
+		"ingredientId": "corn_canned",
+		"name": "Corn, Canned",
+		"cost": {
+			"price": 0.07,
+			"unit": "oz"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 0.64,
+				"teaspoon": 3.3333,
+				"whole": 280
+			},
+			"fat": {
+				"gram": 0.008,
+				"teaspoon": 0.0416,
+				"whole": 3.5
+			},
+			"carbs": {
+				"gram": 0.136,
+				"teaspoon": 0.7083,
+				"whole": 59.5
+			},
+			"protein": {
+				"gram": 0.016,
+				"teaspoon": 0.0833,
+				"whole": 7
+			}
+		},
+		"allergies": [],
+		"tags": ["vegan",
+		"vegetarian"]
+	},
+	{
+		"ingredientId": "black_beans_canned",
+		"name": "Black Beans, Canned",
+		"cost": {
+			"price": 0.05,
+			"unit": "oz"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 0.8462,
+				"teaspoon": 4.5833,
+				"whole": 385
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": 0
+			},
+			"carbs": {
+				"gram": 0.1538,
+				"teaspoon": 0.8333,
+				"whole": 70
+			},
+			"protein": {
+				"gram": 0.0538,
+				"teaspoon": 0.2917,
+				"whole": 24.5
+			}
+		},
+		"allergies": [],
+		"tags": ["vegan",
+		"vegetarian"]
+	},
+	{
+		"ingredientId": "taco_seasoning",
+		"name": "Taco Seasoning",
+		"cost": {
+			"price": 0.98,
+			"unit": "oz"
+		},
+		"commonalityFactor": 9,
+		"measurements": {
+			"calories": {
+				"gram": 3.3333,
+				"teaspoon": 10,
+				"whole": 120
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": 0
+			},
+			"carbs": {
+				"gram": 0.667,
+				"teaspoon": 2,
+				"whole": 24
+			},
+			"protein": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": 0
+			}
+		},
+		"allergies": [],
+		"tags": ["vegan",
+		"vegetarian"]
+	},
+	{
+		"ingredientId": "salsa",
+		"name": "Salsa",
+		"cost": {
+			"price": 0.12,
+			"unit": "oz"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 0.3226,
+				"teaspoon": 1.6667,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.0968,
+				"teaspoon": 0.5,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegan",
+		"vegetarian"]
+	},
+	{
+		"ingredientId": "brown_rice_raw",
+		"name": "Brown Rice, Raw",
+		"cost": {
+			"price": 0.10,
+			"unit": "oz"
+		},
+		"commonalityFactor": 9,
+		"measurements": {
+			"calories": {
+				"gram": 1.1077,
+				"teaspoon": 4.5,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0.0092,
+				"teaspoon": 0.0375,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.2308,
+				"teaspoon": 0.9375,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0.0256,
+				"teaspoon": 0.1042,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegan",
+		"vegetarian"]
+	},
+	{
+		"ingredientId": "ramen_noodle",
+		"name": "Ramen Noodle",
+		"cost": {
+			"price": 0.10,
+			"unit": "oz"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 4.5238,
+				"teaspoon": null,
+				"whole": 380
+			},
+			"fat": {
+				"gram": 0.1667,
+				"teaspoon": null,
+				"whole": 14
+			},
+			"carbs": {
+				"gram": 0.619,
+				"teaspoon": null,
+				"whole": 52
+			},
+			"protein": {
+				"gram": 0.119,
+				"teaspoon": null,
+				"whole": 10
+			}
+		},
+		"allergies": ["gluten",
+		"soy"],
+		"tags": []
+	},
+	{
+		"ingredientId": "almonds",
+		"name": "Almonds",
+		"cost": {
+			"price": 0.50,
+			"unit": "oz"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 5.7552,
+				"teaspoon": 17.1458,
+				"whole": 7
+			},
+			"fat": {
+				"gram": 0.4965,
+				"teaspoon": 1.4792,
+				"whole": 0.6
+			},
+			"carbs": {
+				"gram": 0.2168,
+				"teaspoon": 0.6458,
+				"whole": 0.3
+			},
+			"protein": {
+				"gram": 0.2098,
+				"teaspoon": 0.625,
+				"whole": 0.3
+			}
+		},
+		"allergies": ["tree nut"],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo"]
+	},
+	{
+		"ingredientId": "green_cabbage",
+		"name": "Green Cabbage",
+		"cost": {
+			"price": 0.58,
+			"unit": "pound"
+		},
+		"commonalityFactor": 9,
+		"measurements": {
+			"calories": {
+				"gram": 0.2609,
+				"teaspoon": 0.4583,
+				"whole": 223
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": 0
+			},
+			"carbs": {
+				"gram": 0.0565,
+				"teaspoon": 0.1042,
+				"whole": 53
+			},
+			"protein": {
+				"gram": 0.013,
+				"teaspoon": 0.0229,
+				"whole": 12
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "purple_cabbage",
+		"name": "PurpleCabbage",
+		"cost": {
+			"price": 1.06,
+			"unit": "pound"
+		},
+		"commonalityFactor": 9,
+		"measurements": {
+			"calories": {
+				"gram": 0.3111,
+				"teaspoon": 0.5833,
+				"whole": 261
+			},
+			"fat": {
+				"gram": 0.0015,
+				"teaspoon": 0.0021,
+				"whole": 1.3
+			},
+			"carbs": {
+				"gram": 0.0739,
+				"teaspoon": 0.1458,
+				"whole": 62
+			},
+			"protein": {
+				"gram": 0.0143,
+				"teaspoon": 0.0271,
+				"whole": 12
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "carrot_raw",
+		"name": "Carrot, Raw",
+		"cost": {
+			"price": 0.74,
+			"unit": "pound"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 0.4098,
+				"teaspoon": 1.1042,
+				"whole": 25
+			},
+			"fat": {
+				"gram": 0.0016,
+				"teaspoon": 0.0063,
+				"whole": 0.1
+			},
+			"carbs": {
+				"gram": 0.0984,
+				"teaspoon": 0.25,
+				"whole": 6
+			},
+			"protein": {
+				"gram": 0.0098,
+				"teaspoon": 0.025,
+				"whole": 0.6
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "baby_carrot_raw",
+		"name": "Baby Carrot, Raw",
+		"cost": {
+			"price": 1.45,
+			"unit": "pound"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 0.4,
+				"teaspoon": null,
+				"whole": 4
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": null,
+				"whole": 0
+			},
+			"carbs": {
+				"gram": 0.08,
+				"teaspoon": null,
+				"whole": 0.8
+			},
+			"protein": {
+				"gram": 0.01,
+				"teaspoon": null,
+				"whole": 0.1
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "carrots_canned",
+		"name": "Carrots, Canned",
+		"cost": {
+			"price": 1.06,
+			"unit": "pound"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 0.25,
+				"teaspoon": 1.25,
+				"whole": 105
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": 0
+			},
+			"carbs": {
+				"gram": 0.05,
+				"teaspoon": 0.25,
+				"whole": 21
+			},
+			"protein": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": 0
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "green_onion",
+		"name": "GreenOnion(akaScallion)",
+		"cost": {
+			"price": 0.22,
+			"unit": "whole"
+		},
+		"commonalityFactor": 7,
+		"measurements": {
+			"calories": {
+				"gram": 0.3333,
+				"teaspoon": 0.6667,
+				"whole": 5
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": 0
+			},
+			"carbs": {
+				"gram": 0.0733,
+				"teaspoon": 0.1458,
+				"whole": 1.1
+			},
+			"protein": {
+				"gram": 0.02,
+				"teaspoon": 0.0375,
+				"whole": 0.3
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "sesame_seed",
+		"name": "Sesame Seed",
+		"cost": {
+			"price": 4.00,
+			"unit": "pound"
+		},
+		"commonalityFactor": 6,
+		"measurements": {
+			"calories": {
+				"gram": 5.7778,
+				"teaspoon": 17.3333,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.2333,
+				"teaspoon": 0.7,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0.1778,
+				"teaspoon": 0.5333,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "olive_oil",
+		"name": "Olive Oil",
+		"cost": {
+			"price": 0.25,
+			"unit": "fl oz"
+		},
+		"commonalityFactor": 8,
+		"measurements": {
+			"calories": {
+				"gram": 8.8148,
+				"teaspoon": 39.6667,
+				"whole": null
+			},
+			"fat": {
+				"gram": 1.037,
+				"teaspoon": 4.6667,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb",
+		"no-carb"]
+	},
+	{
+		"ingredientId": "apple_cider_vinegar",
+		"name": "Apple Cider Vinegar",
+		"cost": {
+			"price": 0.20,
+			"unit": "fl oz"
+		},
+		"commonalityFactor": 6,
+		"measurements": {
+			"calories": {
+				"gram": 0.2134,
+				"teaspoon": 1.0625,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.0092,
+				"teaspoon": 0.0458,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "sugar",
+		"name": "Sugar",
+		"cost": {
+			"price": 0.65,
+			"unit": "pound"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 3.8095,
+				"teaspoon": 16,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 1,
+				"teaspoon": 4.2,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan"]
+	},
+	{
+		"ingredientId": "soy_sauce",
+		"name": "Soy Sauce",
+		"cost": {
+			"price": 0.20,
+			"unit": "fl oz"
+		},
+		"commonalityFactor": 9,
+		"measurements": {
+			"calories": {
+				"gram": 0.5294,
+				"teaspoon": 2.8125,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0.0059,
+				"teaspoon": 0.0313,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.051,
+				"teaspoon": 0.2708,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0.0824,
+				"teaspoon": 0.4375,
+				"whole": null
+			}
+		},
+		"allergies": ["soy"],
+		"tags": ["vegetarian",
+		"vegan",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "black_pepper",
+		"name": "Black Pepper",
+		"cost": {
+			"price": 1.20,
+			"unit": "oz"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 2.4638,
+				"teaspoon": 5.6667,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0.029,
+				"teaspoon": 0.0667,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.6377,
+				"teaspoon": 1.4667,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0.1014,
+				"teaspoon": 0.2333,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"low-carb",
+		"paleo"]
+	},
+	{
+		"ingredientId": "garlic_powder",
+		"name": "Garlic Powder",
+		"cost": {
+			"price": 0.80,
+			"unit": "oz"
+		},
+		"commonalityFactor": 8,
+		"measurements": {
+			"calories": {
+				"gram": 3.299,
+				"teaspoon": 10.6667,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0.0103,
+				"teaspoon": 0.0333,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.7216,
+				"teaspoon": 2.3333,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0.1649,
+				"teaspoon": 0.5333,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo"]
+	},
+	{
+		"ingredientId": "onion_powder",
+		"name": "Onion Powder",
+		"cost": {
+			"price": 0.80,
+			"unit": "oz"
+		},
+		"commonalityFactor": 8,
+		"measurements": {
+			"calories": {
+				"gram": 3.4783,
+				"teaspoon": 8,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0.0145,
+				"teaspoon": 0.0333,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.7246,
+				"teaspoon": 1.6667,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0.1014,
+				"teaspoon": 0.2333,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo"]
+	},
+	{
+		"ingredientId": "ginger",
+		"name": "Ginger",
+		"cost": {
+			"price": 2.00,
+			"unit": "oz"
+		},
+		"commonalityFactor": 6,
+		"measurements": {
+			"calories": {
+				"gram": 0.8182,
+				"teaspoon": 2,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0.0091,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0.1818,
+				"teaspoon": 0.4,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0.0182,
+				"teaspoon": 0,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb"]
+	},
+	{
+		"ingredientId": "salt",
+		"name": "Salt",
+		"cost": {
+			"price": 0.05,
+			"unit": "oz"
+		},
+		"commonalityFactor": 10,
+		"measurements": {
+			"calories": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"fat": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"carbs": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			},
+			"protein": {
+				"gram": 0,
+				"teaspoon": 0,
+				"whole": null
+			}
+		},
+		"allergies": [],
+		"tags": ["vegetarian",
+		"vegan",
+		"paleo",
+		"low-carb",
+		"no-carb"]
+	}]
+}

@@ -1,0 +1,211 @@
+{
+	"recipes": [{
+		"recipeId": "turkey_tacos_bowls",
+		"name": "Turkey Taco Bowls",
+		"url": null,
+		"time": {
+			"active": 15,
+			"total": 255
+		},
+		"servings": 10,
+		"difficultyRating": 1,
+		"ingredientSections": [{
+			"name": "",
+			"id": "main"
+		}],
+		"ingredients": [{
+			"id": "ground_turkey",
+			"description": "2 lbs ground turkey",
+			"quantity": 2,
+			"measurement": "lb",
+			"section": "main"
+		},
+		{
+			"id": "corn_canned",
+			"description": "1 (15.25 oz) can of corn, drained",
+			"quantity": 15.25,
+			"measurement": "oz",
+			"section": "main"
+		},
+		{
+			"id": "black_beans_canned",
+			"description": "1 (15 oz) can of black beans",
+			"quantity": 15,
+			"measurement": "oz",
+			"section": "main"
+		},
+		{
+			"id": "taco_seasoning",
+			"description": "1 packet of taco seasoning",
+			"quantity": 1,
+			"measurement": "whole",
+			"section": "main"
+		},
+		{
+			"id": "salsa",
+			"description": "1 (16 oz) jar of salsa",
+			"quantity": 16,
+			"measurement": "oz",
+			"section": "main"
+		},
+		{
+			"id": "brown_rice_raw",
+			"description": "2-1/2 cups of dry, brown rice",
+			"quantity": 120,
+			"measurement": "teaspoon",
+			"section": "main"
+		}],
+		"directions": ["Cook ground turkey in a large frying pan.",
+		"Combine all ingredients in a crock pot. Stir until taco seasoning is completely mixed in.",
+		"Turn crock pot on low for 4 hours.",
+		"With 30 minutes left on the crock pot, cook the brown rice. (A rice cooker comes in handy here if you already have one. Well worth the investment)",
+		"Bring 5 cups of water to a boil, turn it down to simmer, add the rice, and cover for 15 minutes.",
+		"Serve the taco mixture over rice."],
+		"notes": ["A serving is a 1/2 cup scoop of the taco mixture and a 1/4 cup scoop of brown rice.",
+		"The ground turkey can be cooked ahead of time and frozen until ready for use. Make sure you move it to the fridge one day before to allow turkey to thaw."],
+		"tags": ["crockpot",
+		"mexican"]
+	},
+	{
+		"recipeId": "asian_ramen_chicken_chopped_salad",
+		"name": "Asian Ramen-Chicken Chopped Salad",
+		"url": "http://www.cookingclassy.com/asian-ramen-chicken-chopped-salad/",
+		"time": {
+			"active": 15,
+			"total": 15
+		},
+		"servings": 5,
+		"difficultyRating": 2,
+		"ingredientSections": [{
+			"name": "",
+			"id": "main"
+		},
+		{
+			"name": "Dressing",
+			"id": "dressing"
+		}],
+		"ingredients": [{
+			"id": "chicken_breast",
+			"description": "1 lb boneless skinless chicken breasts, cooked and shredded or chopped",
+			"quantity": 1,
+			"measurement": "lb",
+			"section": "main"
+		},
+		{
+			"id": "ramen_noodle",
+			"description": "2 (3 oz) packages dry ramen",
+			"quantity": 6,
+			"measurement": "oz",
+			"section": "main"
+		},
+		{
+			"id": "almonds",
+			"description": "3/4 cup sliced almonds",
+			"quantity": 0.75,
+			"measurement": "cup",
+			"section": "main"
+		},
+		{
+			"id": "green_cabbage",
+			"description": "5 cups shredded green cabbage (12 oz, chop into thin shreds)",
+			"quantity": 5,
+			"measurement": "cup",
+			"section": "main"
+		},
+		{
+			"id": "purpple_cabbage",
+			"description": "2 cups shredded purple cabbage (5 oz, chop into thin shreds)",
+			"quantity": 2,
+			"measurement": "cup",
+			"section": "main"
+		},
+		{
+			"id": "carrot_raw",
+			"description": "1 large carrot peeled and chopped into matchsticks (3/4 cup)",
+			"quantity": 0.75,
+			"measurement": "cup",
+			"section": "main"
+		},
+		{
+			"id": "green_onion",
+			"description": "4 green onions, sliced (about 1/2 cup)",
+			"quantity": 0.5,
+			"measurement": "cup",
+			"section": "main"
+		},
+		{
+			"id": "sesame_seed",
+			"description": "2 Tbsp toasted sesame seeds",
+			"quantity": 2,
+			"measurement": "tbsp",
+			"section": "main"
+		},
+		{
+			"id": "olive_oil",
+			"description": "1/2 cup olive oil",
+			"quantity": 0.5,
+			"measurement": "cup",
+			"section": "dressing"
+		},
+		{
+			"id": "apple_cider_vinegar",
+			"description": "1/4 cup + 2 Tbsp apple cider vinegar",
+			"quantity": 6,
+			"measurement": "tbsp",
+			"section": "dressing"
+		},
+		{
+			"id": "sugar",
+			"description": "1/2 cup granulated sugar",
+			"quantity": 0.5,
+			"measurement": "cup",
+			"section": "dressing"
+		},
+		{
+			"id": "soy_sauce",
+			"description": "1 1/2 Tbsp soy sauce (not low-sodium)",
+			"quantity": 1.5,
+			"measurement": "tbsp",
+			"section": "dressing"
+		},
+		{
+			"id": "black_pepper",
+			"description": "1/2 tsp freshly ground black pepper",
+			"quantity": 0.5,
+			"measurement": "tsp",
+			"section": "dressing"
+		},
+		{
+			"id": "garlic_powder",
+			"description": "1/4 tsp garlic powder",
+			"quantity": 0.25,
+			"measurement": "tsp",
+			"section": "dressing"
+		},
+		{
+			"id": "onion_powder",
+			"description": "1/4 tsp onion powder",
+			"quantity": 0.25,
+			"measurement": "tsp",
+			"section": "dressing"
+		},
+		{
+			"id": "ginger",
+			"description": "1/4 tsp dried ginger",
+			"quantity": 0.25,
+			"measurement": "tsp",
+			"section": "dressing"
+		},
+		{
+			"id": "salt",
+			"description": "Salt to taste",
+			"quantity": null,
+			"measurement": null,
+			"section": "dressing"
+		}],
+		"directions": ["Preheat oven to 400 degrees. Crumble ramen into small pieces and place on baking sheet along with almonds, spread into an even layer. Bake in preheated oven until golden, tossing once halfway through baking, about 6 - 8 minutes. Set aside to cool.",
+		"In a mixing bowl whisk together all of the dressing ingredients until well blended while seasoning with salt to taste, set aside.",
+		"To a large bowl add green cabbage, purple cabbage, carrots, green onions, chicken, toasted ramen and almonds and sesame seeds. Drizzle dressing over top and toss to evenly coat. Serve right away for crunchiest results."],
+		"notes": ["If desired you can also use a 16 oz coleslaw mix in place of the cabbages and carrot, I just prefer the freshly chopped for this recipe, plus the mixes are skimpy on the purple cabbage."]
+	}]
+}
