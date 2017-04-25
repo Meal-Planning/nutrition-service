@@ -1,3 +1,6 @@
+#intelliJ
+/.idea
+
 # Logs
 logs
 *.log
