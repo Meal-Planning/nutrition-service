@@ -67,6 +67,36 @@ var Ingredient = function (router) {
 				res.json({ message: 'Successfully deleted' });
 			});
 		});
+
+	router.route('/ingredient/search/:searchKey')
+		.get(function(req, res) {
+			//setup query format
+			var q = {$or: [{$and: []},{$and: []}]};
+
+			//extract keys
+			var keys = req.params.searchKey.split(' ');
+
+			keys.forEach(function (key) {
+				//ingredientId
+				q.$or[0].$and.push({
+							ingredientId: {
+								$regex : '.*'+key.toLowerCase()+'.*'
+							}
+						});
+				
+				//name
+				q.$or[1].$and.push({
+							name: {
+								$regex : '.*'+key+'.*'
+							}
+						});
+			});
+
+			IngredientModel.find(q, function(err, ingredients) {
+				if (err) res.send(err);
+				res.json({ok: true, ingredientCount: ingredients.length, ingredients: ingredients});
+			});
+		});
 }
 
 module.exports = Ingredient;
