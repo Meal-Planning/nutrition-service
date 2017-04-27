@@ -130,6 +130,36 @@ var Recipe = function (router) {
 			});
 		});
 
+	router.route('/recipe/search/:searchKey')
+		.get(function(req, res) {
+			//setup query format
+			var q = {$or: [{$and: []},{$and: []}]};
+
+			//extract keys
+			var keys = req.params.searchKey.split(' ');
+
+			keys.forEach(function (key) {
+				//recipeId
+				q.$or[0].$and.push({
+							recipeId: {
+								$regex : '.*'+key.toLowerCase()+'.*'
+							}
+						});
+				
+				//name
+				q.$or[1].$and.push({
+							name: {
+								$regex : '.*'+key+'.*'
+							}
+						});
+			});
+
+			RecipeModel.find(q, function(err, recipes) {
+				if (err) res.send(err);
+				res.json({ok: true, recipeCount: recipes.length, recipes: recipes});
+			});
+		});
+
 	//TODO: Move this into a conversion utility
 	var conversionHelper = function (from, measurement) {
 		if (from == 'tsp') {
