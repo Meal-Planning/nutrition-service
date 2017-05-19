@@ -29,6 +29,7 @@ router.get('/', function (req, res) {
 var utility = require('./app/routes/utility')(router);
 var recipe = require('./app/routes/recipe')(router);
 var ingredient = require('./app/routes/ingredient')(router);
+var user = require('./app/routes/user')(router);
 
 
 
