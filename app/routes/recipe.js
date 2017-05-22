@@ -28,20 +28,25 @@ var Recipe = function (router) {
 			});
 		})
 		.get(function(req, res) {
-			RecipeModel.find(function(err, recipes) {
-				if (err) res.send(err);
-
+			getAllRecipes(function (recipes) {
 				res.json(recipes);
 			});
 		});
 		
 	router.route('/recipe/:recipe_id')
 		.get(function(req, res) {
-			RecipeModel.findOne({recipeId: req.params.recipe_id}, function(err, recipe) {
-				if (err) res.send(err);
-				
-				res.json(recipe);
-			});
+			if (req.params.recipe_id == 'search') {
+				getAllRecipes(function (recipes) {
+					res.json(recipes);
+				});
+			}
+			else {
+				RecipeModel.findOne({recipeId: req.params.recipe_id}, function(err, recipe) {
+					if (err) res.send(err);
+					
+					res.json(recipe);
+				});
+			}
 		})
 		.put(function(req, res) {
 			RecipeModel.findOne({recipeId: req.params.recipe_id}, function(err, recipe) {
@@ -188,6 +193,14 @@ var Recipe = function (router) {
 			return measurement.whole;
 		}
 	};
+
+	var getAllRecipes = function (callback) {
+		RecipeModel.find(function(err, recipes) {
+			if (err) res.send(err);
+
+			callback(recipes);
+		});
+	}
 }
 
 module.exports = Recipe;

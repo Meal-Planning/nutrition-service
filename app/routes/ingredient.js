@@ -25,20 +25,25 @@ var Ingredient = function (router) {
 			});
 		})
 		.get(function(req, res) {
-			IngredientModel.find(function(err, ingredients) {
-				if (err) res.send(err);
-
+			getAllIngredients(function (ingredients) {
 				res.json(ingredients);
 			});
 		});
 		
 	router.route('/ingredient/:ingredient_id')
 		.get(function(req, res) {
-			IngredientModel.findById(req.params.ingredient_id, function(err, ingredient) {
-				if (err) res.send(err);
-				
-				res.json(ingredient);
-			});
+			if (req.params.ingredient_id == 'search') {
+				getAllIngredients(function (ingredients) {
+					res.json(ingredients);
+				});
+			}
+			else {
+				IngredientModel.findById(req.params.ingredient_id, function(err, ingredient) {
+					if (err) res.send(err);
+					
+					res.json(ingredient);
+				});
+			}
 		})
 		.put(function(req, res) {
 			IngredientModel.findById(req.params.ingredient_id, function(err, ingredient) {
@@ -97,6 +102,14 @@ var Ingredient = function (router) {
 				res.json({ok: true, ingredientCount: ingredients.length, ingredients: ingredients});
 			});
 		});
+
+		var getAllIngredients = function (callback) {
+			IngredientModel.find(function(err, ingredients) {
+				if (err) res.send(err);
+
+				callback(ingredients);
+			});
+		};
 }
 
 module.exports = Ingredient;
