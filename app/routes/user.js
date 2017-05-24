@@ -72,6 +72,27 @@ var User = function (router) {
 			});
 		});
 
+		router.route('/user/:email/weight/history')
+			.get(function(req, res) {
+				var startDate = req.query.startDate ? new Date(req.query.startDate) : new Date(-8640000000000000);
+				var endDate = req.query.endDate ? new Date(req.query.endDate) : new Date(8640000000000000);
+				var history = [];
+
+				UserModel.findOne({email: req.params.email}, function(err, user) {
+					if (err) res.send(err);
+					if (!user) res.json({ ok: false, why: "user-does-not-exist"})
+					
+					user.body.weight.history.forEach(function(weight) {
+						var wDate = new Date(weight.date);
+						if (wDate >= startDate && wDate <= endDate) {
+							history.push(weight);
+						}
+					});
+
+					res.json({ ok: true, history: history })
+				});
+			});
+
 		//Log weight
 		router.route('/user/:email/weight/log')
 			.post(function(req, res) {
@@ -95,6 +116,27 @@ var User = function (router) {
 						
 						res.json({ message: 'Weight logged!' });
 					});
+				});
+			});
+
+		router.route('/user/:email/fat/history')
+			.get(function(req, res) {
+				var startDate = req.query.startDate ? new Date(req.query.startDate) : new Date(-8640000000000000);
+				var endDate = req.query.endDate ? new Date(req.query.endDate) : new Date(8640000000000000);
+				var history = [];
+
+				UserModel.findOne({email: req.params.email}, function(err, user) {
+					if (err) res.send(err);
+					if (!user) res.json({ ok: false, why: "user-does-not-exist"})
+					
+					user.body.fat_percent.history.forEach(function(fat) {
+						var wDate = new Date(fat.date);
+						if (wDate >= startDate && wDate <= endDate) {
+							history.push(fat);
+						}
+					});
+
+					res.json({ ok: true, history: history })
 				});
 			});
 
