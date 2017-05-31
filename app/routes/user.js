@@ -166,8 +166,37 @@ var User = function (router) {
 				});
 			});
 
-		//Get weekly targets
 
+		var getStartingBMR = function (sex, height, weight, age) {
+			//Convert to metrics
+			var metricHeight = height * 2.54;
+			var metricWeight = weight * .453592;
+
+			//BMR for either sex
+			var BMR = (10 * metricWeight) + (6.25 * metricHeight) - (5 * age);
+
+			//Adjust for sex
+			BMR = sex == "male" ? BMR + 5 : BMR - 161;
+
+			return BMR;
+		};
+
+		var getMacrosForUser = function (BMR, weight, addedCals) {
+			//multiplier = [workout level, calorie multiplier, carb multiplier]
+			var multipliers = [["none", 1.2, .5], ["light", 1.375, 1], ["moderate", 1.55, 1.5], ["heavy", 1.725, 2]]
+			var macros = {};
+
+			multipliers.forEach(function (mult) {
+				macros[mult[0]] = {
+					calories: BMR * mult[1] + addedCals,
+					protein: weight,
+					carbs: weight * mult[2],
+					fat: ((BMR * mult[1] + addedCals) - (4 * weight) - (4 * mult[2] * weight)) / 9
+				}
+			})
+
+			return macros;
+		};
 }
 
 module.exports = User;
