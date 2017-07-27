@@ -22,9 +22,11 @@ var User = function (router) {
 				user.phone = req.body.phone;
 				user.address = req.body.address;
 				user.sex = req.body.sex;
+				user.age = req.body.age;
 				user.body = req.body.body;
 				user.food = req.body.food;
 				user.meals = req.body.meals;
+				user.nutrition = req.body.nutrition;
 				
 				user.save(function(err) {
 					if (err) res.send(err);
@@ -51,9 +53,11 @@ var User = function (router) {
 				user.phone = req.body.phone || user.phone;
 				user.address = req.body.address || user.address;
 				user.sex = req.body.sex || user.sex;
+				user.age = req.body.age || user.age;
 				user.body = req.body.body || user.body;
 				user.food = req.body.food || user.food;
 				user.meals = req.body.meals || user.meals;
+				user.nutrition = req.body.nutrition || user.nutrition;
 			
 				user.save(function(err) {
 					if (err) res.send(err);

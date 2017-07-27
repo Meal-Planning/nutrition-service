@@ -7,6 +7,7 @@ var UserSchema = new Schema({
     phone: String,
     address: String,
     sex: String,
+    age: Number,
     body: {
         weight: {
             current: Number,
@@ -35,6 +36,7 @@ var UserSchema = new Schema({
         dislikes: [String]
     },
     meals: {
+        deliveryDay: String,
         history: [
             {
                 recipe: String,
@@ -46,6 +48,22 @@ var UserSchema = new Schema({
 				recipe: String,
 				rating: Number
 			}
+        ]
+    },
+    nutrition: {
+        isocaloricValue: Number,
+        weeklyExercise: {
+            light: Number,
+            moderate: Number,
+            heavy: Number
+        },
+        cycles: [
+            {
+                targetWeight: Number,
+                deltaWeightGoal: Number,
+                startDate: Date,
+                endDate: Date
+            }
         ]
     }
 });

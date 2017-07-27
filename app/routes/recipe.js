@@ -11,7 +11,7 @@ var Recipe = function (router) {
 				var recipe = new RecipeModel();
 				recipe.recipeId = req.body.recipeId;
 				recipe.name = req.body.name;
-				recipe.url = req.body.url;
+				recipe.source = req.body.source;
 				recipe.time = req.body.time;
 				recipe.servings = req.body.servings;
 				recipe.difficultyRating = req.body.difficultyRating;
@@ -53,7 +53,7 @@ var Recipe = function (router) {
 				if (err) res.send(err);
 				
 				recipe.name = req.body.name || recipe.name;
-				recipe.url = req.body.url || recipe.url;
+				recipe.source = req.body.source || recipe.source;
 				recipe.time = req.body.time || recipe.time;
 				recipe.servings = req.body.servings || recipe.servings;
 				recipe.difficultyRating = req.body.difficultyRating || recipe.difficultyRating;
@@ -106,10 +106,10 @@ var Recipe = function (router) {
 							console.log(ing.description + ": " + totCals);
 							console.log("(" + totProt + "*4) + (" + totCarb + "*4) + (" + totFat + "*9) = " + ((totProt*4) + (totCarb*4) + (totFat*9)));*/
 
-							calories += conversionHelper(ing.measurement, ingredient.measurements.calories) * ing.quantity;
-							protein += conversionHelper(ing.measurement, ingredient.measurements.protein) * ing.quantity;
-							carbs += conversionHelper(ing.measurement, ingredient.measurements.carbs) * ing.quantity;
-							fat += conversionHelper(ing.measurement, ingredient.measurements.fat) * ing.quantity;
+							calories += conversionHelper(ing.measurement, ingredient.measurements, "calories") * ing.quantity;
+							protein += conversionHelper(ing.measurement, ingredient.measurements, "protein") * ing.quantity;
+							carbs += conversionHelper(ing.measurement, ingredient.measurements, "carbs") * ing.quantity;
+							fat += conversionHelper(ing.measurement, ingredient.measurements, "fat") * ing.quantity;
 						}
 
 						fetchCount++;
@@ -166,32 +166,44 @@ var Recipe = function (router) {
 		});
 
 	//TODO: Move this into a conversion utility
-	var conversionHelper = function (from, measurement) {
-		if (from == 'tsp') {
-			return measurement.teaspoon;
+	var conversions = {
+		'tsp': {
+			'tbsp': {'fn': 'div', 'amt': 3},
+			'cup': {'fn': 'div', 'amt': 48}
+		},
+		'tbsp': {
+			'tsp': {'fn': 'mult', 'amt': 3},
+			'cup': {'fn': 'div', 'amt': 16}
+		},
+		'cup': {
+			'tsp': {'fn': 'mult', 'amt': 48},
+			'tbsp': {'fn': 'mult', 'amt': 16}
+		},
+		'gram': {
+			'oz': {'fn': 'div', 'amt': 28.3495},
+			'lb': {'fn': 'div', 'amt': 453.592}
+		},
+		'oz': {
+			'gram': {'fn': 'mult', 'amt': 28.3495},
+			'lb': {'fn': 'div', 'amt': 16}
+		},
+		'lb': {
+			'gram': {'fn': 'mult', 'amt': 453.592},
+			'oz': {'fn': 'mult', 'amt': 16}
 		}
-		if (from == 'tbsp') {
-			//tbsp to tsp
-			return measurement.teaspoon * 3;
+	};
+	var conversionHelper = function (from, measurements, macro) {
+		/*console.log(from);
+		console.log(measurements.type);
+		console.log(conversions[from]);
+		console.log(conversions[from][measurements.type]);*/
+		var conv = conversions[from][measurements.type];
+		if (conv.fn == 'mult') {
+			return measurements.macros[macro] * conv.amt;
 		}
-		else if (from == 'cup') {
-			//cup to tsp
-			return measurement.teaspoon * 48;
-		}
-		else if (from == 'gram') {
-			return measurement.gram;
-		}
-		else if (from == 'oz') {
-			//oz to gram
-			return measurement.gram * 28.3495;
-		}
-		else if (from == 'lb') {
-			//lb to gram
-			return measurement.gram * 453.592;
-		}
-		else if (from == 'whole') {
-			return measurement.whole;
-		}
+		else {
+			return measurements.macros[macro] / conv.amt;
+		};
 	};
 
 	var getAllRecipes = function (callback) {

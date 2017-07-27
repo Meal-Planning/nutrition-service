@@ -9,28 +9,18 @@ var IngredientSchema = new Schema({
 		unit: String
 	},
 	commonalityFactor: Number,
-	measurements: {
-		calories: {
-			gram: Number,
-			teaspoon: Number,
-			whole: Number
-		},
-		protein: {
-			gram: Number,
-			teaspoon: Number,
-			whole: Number
-		},
-		carbs: {
-			gram: Number,
-			teaspoon: Number,
-			whole: Number
-		},
-		fat: {
-			gram: Number,
-			teaspoon: Number,
-			whole: Number
-		}
-	},
+	measurements: [
+		{
+            type: String,
+            amount: Number,
+            macros: {
+                calories: Number,
+                protein: Number,
+                carbs: Number,
+                fat: Number
+            }
+        }
+	],
 	allergies: [String],
 	tags: [String]
 });
