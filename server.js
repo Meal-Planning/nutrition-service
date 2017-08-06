@@ -18,7 +18,7 @@ var router = express.Router();
 
 // MONGOOSE
 // ====================================================
-mongoose.connect('mongodb://localhost/Nutrition');
+mongoose.connect('mongodb://localhost/Nutrition', {useMongoClient: true});
 
 
 // ROUTES
