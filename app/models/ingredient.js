@@ -11,7 +11,7 @@ var IngredientSchema = new Schema({
 	commonalityFactor: Number,
 	measurements: [
 		{
-            type: String,
+            measurementType: String,
             amount: Number,
             macros: {
                 calories: Number,
