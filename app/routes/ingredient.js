@@ -20,7 +20,7 @@ var Ingredient = function (router) {
 				ingredient.save(function(err) {
 					if (err) res.send(err);
 					
-					res.json({ message: 'Ingredient created!' });
+					res.json({ message: 'Ingredient created!', ok: true });
 				});
 			});
 		})

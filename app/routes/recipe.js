@@ -23,7 +23,7 @@ var Recipe = function (router) {
 				recipe.save(function(err) {
 					if (err) res.send(err);
 					
-					res.json({ message: 'Recipe created!' });
+					res.json({ message: 'Recipe created!', ok: true });
 				});
 			});
 		})
