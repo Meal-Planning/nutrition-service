@@ -31,7 +31,7 @@ var User = function (router) {
 				user.save(function(err) {
 					if (err) res.send(err);
 					
-					res.json({ message: 'User created!' });
+					res.json({ message: 'User created!', ok: true });
 				});
 			});
 		});

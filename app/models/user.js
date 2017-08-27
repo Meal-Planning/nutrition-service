@@ -7,14 +7,15 @@ var UserSchema = new Schema({
     phone: String,
     address: String,
     sex: String,
-    age: Number,
+    birthDate: Date,
     body: {
         weight: {
             current: Number,
             target: Number,
+            intensity: String,
             history: [
 				{
-					date: String,
+					date: Date,
 					weight: Number
 				}
             ]
@@ -25,7 +26,7 @@ var UserSchema = new Schema({
             target: Number,
             history: [
 				{
-					date: String,
+					date: Date,
 					percent: Number
 				}
 			]
@@ -52,6 +53,7 @@ var UserSchema = new Schema({
     },
     nutrition: {
         isocaloricValue: Number,
+        workoutDays: [String],
         weeklyExercise: {
             light: Number,
             moderate: Number,
