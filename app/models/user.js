@@ -16,7 +16,8 @@ var UserSchema = new Schema({
             history: [
 				{
 					date: Date,
-					weight: Number
+					weight: Number,
+                    _id: false
 				}
             ]
         },

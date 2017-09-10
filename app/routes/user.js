@@ -8,7 +8,7 @@ var User = function (router) {
 			UserModel.find(function(err, users) {
 				if (err) res.send(err);
 
-				res.json(users);
+				res.json({ users: users, ok: true });
 			});
 		})
 		.post(function(req, res) {
@@ -22,7 +22,7 @@ var User = function (router) {
 				user.phone = req.body.phone;
 				user.address = req.body.address;
 				user.sex = req.body.sex;
-				user.age = req.body.age;
+				user.birthDate = req.body.birthDate;
 				user.body = req.body.body;
 				user.food = req.body.food;
 				user.meals = req.body.meals;
@@ -41,7 +41,7 @@ var User = function (router) {
 			UserModel.findOne({email: req.params.email}, function(err, user) {
 				if (err) res.send(err);
 				
-				res.json(user);
+				res.json({ user: user, ok: true });
 			});
 		})
 		.put(function(req, res) {
@@ -53,6 +53,7 @@ var User = function (router) {
 				user.phone = req.body.phone || user.phone;
 				user.address = req.body.address || user.address;
 				user.sex = req.body.sex || user.sex;
+				user.birthDate = req.body.birthDate;
 				user.age = req.body.age || user.age;
 				user.body = req.body.body || user.body;
 				user.food = req.body.food || user.food;
@@ -62,7 +63,7 @@ var User = function (router) {
 				user.save(function(err) {
 					if (err) res.send(err);
 					
-					res.json({ message: 'User updated!' });
+					res.json({ message: 'User updated!', ok: true });
 				});
 			});
 		})
@@ -170,6 +171,42 @@ var User = function (router) {
 				});
 			});
 
+		router.route('/user/:email/macros')
+			.get(function(req, res) {
+				UserModel.findOne({email: req.params.email}, function(err, user) {
+					if (err) res.send(err);
+					if (!user) res.json({ ok: false, why: "user-does-not-exist"});
+
+					var age = calculateAge(user.birthDate);
+					var bmr = getStartingBMR(user.sex, user.body.height, user.body.weight.current, age);
+					var macros = getMacrosForUser(bmr, user.body.weight.current, 0);
+					
+					var lightCount = user.nutrition.weeklyExercise.light;
+					var moderateCount = user.nutrition.weeklyExercise.moderate;
+					var heavyCount = user.nutrition.weeklyExercise.heavy;
+					var noneCount = 7 - lightCount - moderateCount - heavyCount;
+
+					var weeklyCalories = Math.round((macros.none.calories*noneCount + macros.light.calories*lightCount +
+											macros.moderate.calories*moderateCount + macros.heavy.calories*heavyCount)/7);
+					var weeklyProtein = Math.round((macros.none.protein*noneCount + macros.light.protein*lightCount +
+											macros.moderate.protein*moderateCount + macros.heavy.protein*heavyCount)/7);
+					var weeklyCarbs = Math.round((macros.none.carbs*noneCount + macros.light.carbs*lightCount +
+											macros.moderate.carbs*moderateCount + macros.heavy.carbs*heavyCount)/7);
+					var weeklyFat = Math.round((macros.none.fat*noneCount + macros.light.fat*lightCount +
+											macros.moderate.fat*moderateCount + macros.heavy.fat*heavyCount)/7);
+
+					res.json({
+						ok: true, 
+						macros: {
+							weeklyCalories: weeklyCalories,
+							weeklyProtein: weeklyProtein,
+							weeklyCarbs: weeklyCarbs,
+							weeklyFat: weeklyFat
+						}
+					});
+				});
+			});
+
 
 		var getStartingBMR = function (sex, height, weight, age) {
 			//Convert to metrics
@@ -180,7 +217,7 @@ var User = function (router) {
 			var BMR = (10 * metricWeight) + (6.25 * metricHeight) - (5 * age);
 
 			//Adjust for sex
-			BMR = sex == "male" ? BMR + 5 : BMR - 161;
+			BMR = sex.toLowerCase() == "male" ? BMR + 5 : BMR - 161;
 
 			return BMR;
 		};
@@ -201,6 +238,12 @@ var User = function (router) {
 
 			return macros;
 		};
+
+		var calculateAge = function (birthDate) { // birthday is a date
+		    var ageDifference = Date.now() - birthDate.getTime();
+		    var ageDate = new Date(ageDifference); // miliseconds from epoch
+		    return Math.abs(ageDate.getUTCFullYear() - 1970);
+		}
 }
 
 module.exports = User;
